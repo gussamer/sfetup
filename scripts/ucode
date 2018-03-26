@@ -1,0 +1,5 @@
+#!/bin/sh
+wget -O ~/Documents/code.deb https://go.microsoft.com/fwlink/?LinkID=760868
+sudo dpkg -i ~/Documents/code.deb
+sudo apt-get install -f code
+rm ~/Documents/code.deb
