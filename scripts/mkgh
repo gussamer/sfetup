@@ -1,12 +1,15 @@
-#!/bin/sh
+#!/bin/bash
 echo "[?] What is the name of new github repo?"
 read pname
-if [ $pname ! = "" ]; then
-    echo "[?] What is your github username?"
-    read gname
-    if [ $gname != "" ];
-        curl -u $gname https://api.github.com/user/repos -d '{"name":"'$pname'"}'
-        echo "git remote add origin https://github.com/$gname/$pname.git"
-        echo "git push -u origin master"
-    fi
+if [[ -z "${pname// }" ]]; then
+    exit 1
+fi
+echo "[?] What is your github username?"
+read gname
+if [[ ! -z "${gname// }" ]]; then
+    curl -u $gname https://api.github.com/user/repos -d '{"name":"'$pname'"}'
+    echo "git remote add origin https://github.com/$gname/$pname.git"
+    echo "git push -u origin master"
+else
+    exit 1
 fi
