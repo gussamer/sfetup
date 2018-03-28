@@ -605,3 +605,24 @@ else
 endif
 
 hi Normal ctermbg=none
+
+set encoding=utf-8
+set fileencoding=utf-8
+
+set tw=0
+
+set backupdir=~/.bak
+set directory=~/.swp
+
+" Don't put an extra \n at the EOL
+ au BufWritePre * set binary noeol
+ au BufWritePost * set nobinary eol
+
+" Use 'apex' as the syntax and set our style information
+au BufEnter *.cls set syntax=apex tabstop=4 shiftwidth=4 softtabstop=4 colorcolumn=200
+au BufEnter *.cls exec 'match Todo /\%>80v.\+/'
+au BufEnter *.trigger set syntax=apex tabstop=4 shiftwidth=4 softtabstop=4 colorcolumn=200
+au BufEnter *.trigger exec 'match Todo /\%>80v.\+/'
+au BufEnter *.page set tabstop=4 shiftwidth=4 softtabstop=4 colorcolumn=200
+
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
