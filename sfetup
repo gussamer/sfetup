@@ -16,3 +16,5 @@ sudo cp ./config/* ~/
 sudo cp ./scripts/* /usr/local/bin/
 vim +PlugInstall +qall
 sudo ucode
+sudo apt-get update
+sudo apt-get upgrade
