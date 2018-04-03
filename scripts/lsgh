@@ -1,0 +1,14 @@
+#!/bin/bash
+echo "[?] What is your github username?"
+read gname
+if [[ ! -z "${gname// }" ]]; then
+    repos=$(curl -s -u $gname 'https://api.github.com/user/repos')
+    for row in $(echo "${repos}" | jq -r '.[] | @base64'); do
+        _jq() {
+            echo ${row} | base64 --decode | jq -r ${1}
+        }
+        echo $(_jq '.name')
+    done
+else
+    exit 1
+fi
