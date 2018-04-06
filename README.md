@@ -19,3 +19,9 @@ Setup script for salesforce development on Ubuntu 14.04 LTS with Unity
 - mkgl: create new public gitlab repository (under development)
 
 - ucode: updates vscode to the latest*
+
+## Config
+
+- .bashrc: random things I've copied from various sources that I no longer remember where from or why other than they fix sruff and I take no credit for any of it
+
+- .vimrc: downloaded from vim-bootstrap.com and modified to have transparent background
