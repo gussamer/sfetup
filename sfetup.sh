@@ -12,6 +12,12 @@ sudo ln -s /usr/bin/nodejs /usr/bin/node
 sudo apt-get update --fix-missing
 sudo apt-get install npm
 sudo npm install sfdx -g
+sudo sfdx plugins:install sfdx-waw-plugin
+cd /tmp/
+git clone https://github.com/gussamer/sfetup.git
+sudo cp -fu ./cretup/scripts/* /usr/local/bin/
+cd ~
+rm -frd /tmp/cretup
 sudo cp ./config/* ~/
 sudo cp ./scripts/* /usr/local/bin/
 vim +PlugInstall +qall
