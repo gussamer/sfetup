@@ -6,7 +6,7 @@ Setup script for salesforce development on Ubuntu 14.04 LTS with Unity
 
 ### Install
 
-1. Install: 'wget -q -O - https://raw.github.com/gussamer/sfetup/master/sfetup | bash'
+1. Install: 'wget -q -O - https://raw.github.com/gussamer/sfetup/master/sfetup.sh | bash'
 
 ## Scripts
 
