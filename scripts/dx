@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+'use strict'
+var args = process.argv
+args.shift()
+args.shift()
+var splitIndex = args.findIndex(function(e){ return e.charAt(0)=='-' })
+var commands, flags
+if(splitIndex!=-1){ 
+  commands = args.slice(0,splitIndex)
+  flags = args.slice(splitIndex)
+} else commands = args
+if(commands[0]!='force') commands.unshift('force')
+var command = 'sfdx '+commands.join(':')+(flags ? ' '+flags.join(' ') : '')
+console.log(command)
+const { exec } = require('child_process');
+exec(command, (err, stdout, stderr) => {
+  if (err){
+    console.log(err)
+    return
+  }
+  if(stdout) console.log(`${stdout}`);
+  if(stderr) console.log(`${stderr}`);
+});
