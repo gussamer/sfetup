@@ -12,11 +12,15 @@ Setup script for salesforce development on Ubuntu 14.04 LTS with Unity
 
 *requires root
 
+- installjdk8: installs the java jdk 8 for linux for vscodes salesfore extensions
+
 - lsgh: lists your github repositories
 
 - mkgh: create new public github repository
 
 - mkgl: create new public gitlab repository (under development)
+
+- mkjwt: helper script for creating certificates for sfdx connected apps for the jwt auth flow
 
 - ucode: updates vscode to the latest*
 

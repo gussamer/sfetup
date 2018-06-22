@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#https://gist.github.com/instaBOT/940a8d06843d0a52aa3fec56524102fe#file-ubuntu-14-04-install-oracle-java8-sh
+
+set -eu
+
+
+sudo add-apt-repository --yes ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install --yes oracle-java8-installer
+
+# test Java
+java -version
+#   java version "1.8.0_101"
+#   Java(TM) SE Runtime Environment (build 1.8.0_101-b13)
+#   Java HotSpot(TM) 64-Bit Server VM (build 25.101-b13, mixed mode)
+
+printf '\n\tSet env var "JAVA_HOME" to "/usr/lib/jvm/java-8-oracle/"\n\n'
